@@ -74,14 +74,12 @@ export default defineComponent({
   },
   methods: {
     async handleLogin(){
-      console.log(this.form.username)
       if(this.form.username !='' && this.form.password !=''){
         //alert("here")
         if(this.form.username == 'admin@moreyou.com' && this.form.password == 'admin'){
           const errorAlert = await alertController
             .create({
               header: 'Success',
-              
               message: "Logged in successfully",
               buttons: ['OK'],
             });
@@ -131,9 +129,7 @@ export default defineComponent({
 #container p {
   font-size: 16px;
   line-height: 22px;
-  
   color: #8c8c8c;
-  
   margin: 0;
 }
 

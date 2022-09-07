@@ -1,5 +1,6 @@
 <template>
   <ion-page>
+    
     <ion-header :translucent="true">
       <ion-toolbar>
         <ion-title>Login</ion-title>
@@ -16,9 +17,11 @@
       <div id="container">
         <form @submit.prevent="handleLogin">
       <ion-card>
+
         <ion-item>
           <h3>Please Sign In!</h3>
         </ion-item>
+
         <ion-item>
           <ion-label position="floating">Username</ion-label>
           <ion-input v-model="form.username" id="username"></ion-input>
@@ -32,18 +35,19 @@
         <ion-item>
           <ion-button type="submit" shape="round">
             Sign In
-          
           </ion-button>
         </ion-item>
+
         <ion-item>
           <p>Or</p>
         </ion-item>
+
         <ion-item>
           <ion-button type="button" shape="round">
-            Sign Up
-           
+            Sign Up           
           </ion-button>
         </ion-item>
+
       </ion-card>
     </form>
       </div>
@@ -74,14 +78,11 @@ export default defineComponent({
   },
   methods: {
     async handleLogin(){
-      console.log(this.form.username)
       if(this.form.username !='' && this.form.password !=''){
-        //alert("here")
         if(this.form.username == 'admin@moreyou.com' && this.form.password == 'admin'){
           const errorAlert = await alertController
             .create({
               header: 'Success',
-              
               message: "Logged in successfully",
               buttons: ['OK'],
             });
@@ -115,7 +116,6 @@ export default defineComponent({
 <style scoped>
 #container {
   text-align: center;
-  
   position: absolute;
   left: 0;
   right: 0;
@@ -131,9 +131,7 @@ export default defineComponent({
 #container p {
   font-size: 16px;
   line-height: 22px;
-  
   color: #8c8c8c;
-  
   margin: 0;
 }
 
